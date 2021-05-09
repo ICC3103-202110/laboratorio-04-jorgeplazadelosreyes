@@ -18,7 +18,7 @@ function update(msg,counter){
 function app(counter){
     while (true){
         console.log(view(counter));
-        var msg = prompt("What would you do? ");
+        const msg = prompt("What would you do? ");
         counter = update(msg,counter);
         if(counter === "q"){
             break;
