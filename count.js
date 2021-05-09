@@ -4,7 +4,26 @@ function view(counter){
     return `Count: ${counter}\n\n(+) (-)\n\n(q) to quit\n`;
 }
 //para ftring se usa `` en tecla de corchetes
-console.log(view(5));
-function update(msg,counter){
 
+function update(msg,counter){
+    if (msg === "+"){
+        return counter+1;
+    }
+    if(msg === "-"){
+        return counter-1;
+    }
+    if(msg === "q"){
+        return "q";
+    }
 }
+function app(counter){
+    while (true){
+        console.log(view(counter));
+        counter = update(msg,counter)
+        if(counter === "q"){
+            break;
+        }
+        console.clear();
+    }
+}
+app(0)
